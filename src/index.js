@@ -1,6 +1,6 @@
 // import _ from 'lodash';
-import './style.css';
-import Icon from './png.png';
+import './assets/css/style.css';
+import Icon from './assets/img/png.png';
 
 import printMe from './print.js';
 
@@ -29,4 +29,6 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+const container = document.querySelector('.container');
+
+container.appendChild(component());
