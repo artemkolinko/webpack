@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   // entry: './src/index.js',
   entry: {
     index: './src/index.js',
@@ -15,15 +14,9 @@ module.exports = {
     // clean dist folder
     clean: true,
   },
-  // Source Maps
-  devtool: 'inline-source-map',
-  // This tells webpack-dev-server to serve the files from the dist directory on localhost:8080.
-  devServer: {
-    contentBase: './dist',
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 'Page title',
     }),
   ],
   module: {
