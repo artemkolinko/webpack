@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     // filename: 'bundle.js',
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     // clean dist folder
     clean: true,
@@ -24,7 +24,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      // title use without template property
       title: 'Development',
+      template: './src/index.html',
     }),
     new ESLintPlugin({}),
   ],

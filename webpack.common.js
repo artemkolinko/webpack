@@ -3,20 +3,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // entry: './src/index.js',
+  context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './src/index.js',
-    print: './src/print.js',
+    index: './index.js',
+    print: './print.js',
   },
   output: {
     // filename: 'bundle.js',
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     // clean dist folder
     clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Page title',
+      // title use without template property
+      // title: 'Development',
+      template: './index.html',
     }),
   ],
   module: {
