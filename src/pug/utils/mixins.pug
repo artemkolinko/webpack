@@ -1,3 +1,12 @@
 mixin menu-item(url, text)
   li 
     a(href=url)= text
+
+mixin article-content(descData, descPlace, likes, text)
+  article.article
+    .img__container
+      img(src=require('../../assets/img/sample.jpg'), alt="img desc")
+      .img__description= descData
+        b= descPlace
+      .img_likes= likes
+    p.article__text= text
