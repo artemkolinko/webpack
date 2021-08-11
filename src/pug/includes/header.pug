@@ -1,7 +1,9 @@
 header 
   .container 
-    h1 Header
-    ul 
-      +menu-item('index.html', 'Home')
-      +menu-item('about.html', 'About')
-      +menu-item('contacts.html', 'Contacts')
+    .header__inner 
+      .logo Black and White
+      nav 
+        ul.header__nav.nav
+          +menu-item('index.html', 'Home')
+          +menu-item('about.html', 'About')
+          +menu-item('contacts.html', 'Contacts')
