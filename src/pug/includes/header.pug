@@ -2,9 +2,6 @@ header
   .container 
     h1 Header
     ul 
-      li 
-        a(href="index.html") Home
-      li 
-        a(href="about.html") About
-      li 
-        a(href="contacts.html") Contacts
+      +menu-item('index.html', 'Home')
+      +menu-item('about.html', 'About')
+      +menu-item('contacts.html', 'Contacts')
