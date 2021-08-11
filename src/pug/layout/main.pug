@@ -9,12 +9,6 @@ html(lang="en")
     title #{title}
     meta(name="description", content=description)
   body
-    header 
-      .container 
-        h1 Header
+    include ../includes/header
     block content
-    footer 
-      .container
-        p footer 
-        p 
-          img(src=require("../../assets/img/png.png"), alt="png")
+    include ../includes/footer
