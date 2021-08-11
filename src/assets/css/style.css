@@ -1,9 +1,12 @@
 body {
   margin: 0;
+  background: url('../img/bg-bottom.png') no-repeat bottom right;
+  /* background-color: cadetblue; */
 }
 
 .container {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  max-width: 960px;
   padding: 16px;
-  background: url('../img/bg-bottom.png') no-repeat bottom right;
+  margin: 0 auto;
 }

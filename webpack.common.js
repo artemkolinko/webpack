@@ -15,11 +15,25 @@ module.exports = {
     // clean dist folder
     clean: true,
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       // title use without template property
       // title: 'Development',
-      template: './index.html',
+      template: './pug/pages/index.pug',
+      filename: './index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './pug/pages/about.pug',
+      filename: './about.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './pug/pages/contacts.pug',
+      filename: './contacts.html',
     }),
   ],
   module: {
@@ -27,6 +41,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.pug$/,
+        use: ['pug-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
