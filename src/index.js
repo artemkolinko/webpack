@@ -1,8 +1,8 @@
 // import _ from 'lodash';
 import './assets/css/style.css';
-import Icon from './assets/img/png.png';
+// import Icon from './assets/img/png.png';
 
-import printMe from './print.js';
+// import printMe from './print.js';
 
 function component() {
   const element = document.createElement('div');
@@ -31,4 +31,4 @@ function component() {
 
 const container = document.querySelector('.container');
 
-container.appendChild(component());
+// container.appendChild(component());
