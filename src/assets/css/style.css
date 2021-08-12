@@ -138,7 +138,7 @@ li {
   padding-bottom: 60px;
 }
 
-.main__section__heading {
+.section_heading {
   margin-bottom: 116px;
   text-align: center;
   font-size: 2em;
@@ -306,13 +306,13 @@ time {
 }
 
 /* footer_copy */
-.footer_copy {
+.footer__copy {
   display: flex;
   justify-content: space-between;
   padding: 1em 0;
 }
 
-.footer_copy p {
+.footer__copy p {
   margin: 0;
   color: #a4a4a4;
 }
