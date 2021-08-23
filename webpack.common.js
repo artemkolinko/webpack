@@ -1,6 +1,21 @@
+const fs = require('fs');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const pagesDir = './src/pug/pages/';
+const pagesName = fs.readdirSync(pagesDir);
+
+const generateHtmlWebpackPlugins = pagesName.map((page) => {
+  // new HtmlWebpackPlugin({
+  //   template: './pug/pages/about.pug',
+  //   filename: './about.html',
+  // })
+  return new HtmlWebpackPlugin({
+    template: `./pug/pages/${page}`,
+    filename: `./${page.replace(/\.pug/, '.html')}`,
+  });
+});
 
 module.exports = {
   // entry: './src/index.js',
@@ -22,20 +37,7 @@ module.exports = {
     },
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      // title use without template property
-      // title: 'Development',
-      template: './pug/pages/index.pug',
-      filename: './index.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: './pug/pages/about.pug',
-      filename: './about.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: './pug/pages/contacts.pug',
-      filename: './contacts.html',
-    }),
+    ...generateHtmlWebpackPlugins,
     new MiniCssExtractPlugin({
       filename: 'styles.[contenthash].css',
     }),
