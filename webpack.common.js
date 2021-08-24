@@ -21,8 +21,8 @@ module.exports = {
   // entry: './src/index.js',
   context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './index.js',
-    print: './print.js',
+    index: './index.ts',
+    print: './print.ts',
   },
   output: {
     // filename: 'bundle.js',
@@ -60,6 +60,14 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.json'],
   },
 };

@@ -328,13 +328,26 @@ time {
 @media screen and (min-width: 640px) {
   .flex {
     display: flex;
-    /* flex-wrap: wrap;
-    justify-content: space-around; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .flex-item,
+  .grid-item {
+    padding: 10px 20px;
+  }
+
+  .flex-item {
+    background-color: white;
+  }
+  .grid-item {
+    background-color: lightgray;
   }
 
   .grid {
     display: grid;
     justify-content: start;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
