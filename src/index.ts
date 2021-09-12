@@ -1,22 +1,21 @@
-// import _ from 'lodash';
+// Assets
 import './assets/css/style.css';
-// import Icon from './assets/img/png.png';
-
+// Helpers
 import printMe from './print';
-
+// Static data
 import jobs from './static-data/jobs.json';
 
 const flexContainer = document.querySelector('.flex');
 const flexItemsClass = 'flex-item';
+
+const gridContainer = document.querySelector('.grid');
+const gridItemsClass = 'grid-item';
 
 if (flexContainer) {
   jobs.forEach((job) => {
     flexContainer.appendChild(card(job, flexItemsClass));
   });
 }
-
-const gridContainer = document.querySelector('.grid');
-const gridItemsClass = 'grid-item';
 
 if (gridContainer) {
   jobs.forEach((job) => {
