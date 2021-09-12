@@ -4,6 +4,8 @@ import './assets/css/style.css';
 import printMe from './print';
 // Static data
 import jobs from './static-data/jobs.json';
+// Job interface
+import {Job} from './jobs.types.d';
 
 const flexContainer = document.querySelector('.flex');
 const flexItemsClass = 'flex-item';
@@ -11,23 +13,18 @@ const flexItemsClass = 'flex-item';
 const gridContainer = document.querySelector('.grid');
 const gridItemsClass = 'grid-item';
 
+// Add Children in flex container
 if (flexContainer) {
   jobs.forEach((job) => {
     flexContainer.appendChild(card(job, flexItemsClass));
   });
 }
 
+// Add Children in grid container
 if (gridContainer) {
   jobs.forEach((job) => {
     gridContainer.appendChild(card(job, gridItemsClass));
   });
-}
-
-interface Job {
-  id: number;
-  title: string;
-  time: string;
-  tags: string[];
 }
 
 function card(job: Job, elClass: string) {
